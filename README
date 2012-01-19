@@ -1,1 +1,4 @@
-ECHO is on.
+Sample application demonstrating attribute usage in C#, with the example showing how attributes can be used to support multiple versions of data without requiring hardcoded checks for data version. By keeping data in a class with a common interface between versions, it's possible to add backward (and future) compatibility without affecting existing data versions and formats.
+
+More detailed explanation at: http://hatsaregay.com/?p=34
+(note: the explanation uses a List<MethodInfo> for storing Methods, while the newer code here uses a Dictionary<int,Dictionary<string,MethodInfo>> for performance in situations where the lookup may occur often i.e. if the resulting program switches data versions regularly)
