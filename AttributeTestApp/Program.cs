@@ -66,7 +66,7 @@ namespace SampleAttributeUsage
     {
         static readonly Dictionary<int,Dictionary<string,MethodInfo>> MethodDictionary = new Dictionary<int,Dictionary<string,MethodInfo>>();
 
-        static void Main(string[] args)
+        static void Main()
         {
             const string input1 = "1234";
             const string input2 = "5678";
@@ -134,7 +134,7 @@ namespace SampleAttributeUsage
          * correct method to load it into an IMyData compatible class */
         private static IMyData ProcessInput(string version)
         {
-            MethodInfo loadMethod = null;
+            MethodInfo loadMethod;
             try
             {
                 loadMethod = MethodDictionary[Convert.ToInt32(version)]["Load"];
